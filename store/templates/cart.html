@@ -18,8 +18,8 @@
                     <th id="Img">Imagen</th>
                     <th id="Producto">Producto</th>
                     <th id="Precio">Precio</th>
-                    <th>Cantidad</th>
-                    <th>Total</th>
+                    <th id="Cantidad">Cantidad</th>
+                    <th id="Total">Total</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,9 +40,9 @@
 
             <tfoot>
                 <tr>
-                    <th colspan="4"></th>
-                    <th class="" colspan="">Total</th>
-                    <th>{{products|total_cart_price:request.session.cart|currency}}</th>
+                    <th id="Espacio_vacio" colspan="4"></th>
+                    <th id="Casilla_total" colspan="">Total</th>
+                    <th id="Total_carrito">{{products|total_cart_price:request.session.cart|currency}}</th>
                 </tr>
             </tfoot>
         </table>
