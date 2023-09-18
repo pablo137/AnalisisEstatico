@@ -17,7 +17,7 @@
 {% if productos %}
 <!-- Mostrar los productos -->
 <a class="btn btn-primary" href="{% url 'crear_producto' %}">+ Crear Producto</a>
-<table class="table" summary="Lista de productos registrados por el usuario actual">
+<table class="table" aria-describedby="descripcion-tabla">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -44,7 +44,9 @@
     {% endfor %}
   </tbody>
 </table>
-
+<div id="descripcion-tabla" class="sr-only">
+  Lista de productos registrados por el usuario actual
+</div>
 {% else %}
 <!-- Mostrar el mensaje -->
 <p>{{ mensaje }}</p>
