@@ -123,7 +123,7 @@ DATABASES = {
 ############################ RENDER DATABASE
 
 
-# DATABASES = {'default': dj_database_url.config(default='postgres://USER:PASSWORD@HOST:PORT/NAME', conn_max_age=600 , test_options={'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
 #     'NAME': 'db_oneclick',
 #     'USER' :'postgres',
 #     'PASSWORD' : '123',
