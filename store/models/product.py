@@ -8,7 +8,7 @@ class Product(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nombre de producto')
     price = models.IntegerField(default=0, verbose_name='Precio')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1, verbose_name='Categoria')
-    description = models.TextField(max_length=200, default='' , null=True , blank=True, verbose_name='Descripcion')
+    description = models.TextField(max_length=200, default='' , blank=True, verbose_name='Descripcion')
     image = models.ImageField(default='uploads/products/img_defecto_p_fugbfc.jpg',upload_to='media/uploads/products/', verbose_name='Imagen de producto')
     stock = models.BooleanField(default=True, verbose_name='Estado')
 
