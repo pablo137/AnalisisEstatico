@@ -20,7 +20,7 @@ $(document).ready(function() {
   
     // Evento de clic en el botón de eliminar
     $('.btn-eliminar').on('click', function() {
-      var productoId = $(this).data('producto-id');
+      let productoId = $(this).data('producto-id');
       // Realizar la solicitud Ajax para eliminar el producto
       $.ajax({
         url: "{% url 'eliminar_producto' %}" + productoId + '/',
