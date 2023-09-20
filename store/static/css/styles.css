@@ -434,7 +434,7 @@ text-align: center;}
 }
 
 footer {
-    background: linear-gradient(0deg, rgba(8, 32, 50, 0.9), rgba(8, 32, 50, 0.9)), url(https://res.cloudinary.com/dexh8g1vv/image/upload/v1685317968/media/uploads/footer/bg_banner1_ejgzrv.jpg), #082032;;
+    background: linear-gradient(0deg, rgba(8, 32, 50, 0.9), rgba(8, 32, 50, 0.9)), url(https://res.cloudinary.com/dexh8g1vv/image/upload/v1685317968/media/uploads/footer/bg_banner1_ejgzrv.jpg), #082032;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -486,7 +486,7 @@ input.form-control {
 
 .form-control {
     background-color: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.04);;
+    border-color: rgba(0, 0, 0, 0.04);
 }
 
 .form-control:focus {

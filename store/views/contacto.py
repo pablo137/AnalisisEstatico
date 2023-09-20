@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from store.forms.perfilForms import ContactoForms, Contacto_w_Forms
+from store.forms.perfilForms import ContactoForms, ContactoMensajeForms
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from twilio.rest import Client
@@ -40,7 +40,7 @@ def contacto(request):
 def contactanos(request):
 
     if request.method == 'POST':
-        form = Contacto_w_Forms(request.POST, request.FILES)
+        form = ContactoMensajeForms(request.POST, request.FILES)
         if form.is_valid():
             # account_sid = 'AC6b6ffc0469b49c70652ce4bb9014adb3'
             account_sid = 'AC6b6ffc0469b49c70652ce4bb9014adb3'
@@ -58,6 +58,6 @@ def contactanos(request):
             # return render(request, 'contactanos.html')
             return redirect('contactanos')
     else:
-        form = Contacto_w_Forms()
+        form = ContactoMensajeForms()
     context = {'form': form}
     return render(request, 'contactanos.html', context)
