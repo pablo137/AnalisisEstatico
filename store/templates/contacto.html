@@ -12,21 +12,7 @@
         <div class="col-md-6">
             <form action="" method="POST">
                 {% csrf_token %}
-                <!-- <div class="mb-3">
-                    <label for="name" class="form-label">Nombre y Apellido</label>
-                    {{ form.name }}
-                    {{ form.name.errors }}
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
-                    {{ form.email }}
-                    {{ form.email.errors }}
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Mensaje</label>
-                    {{ form.message }}
-                    {{ form.message.errors }}
-                </div> -->
+                
                 {{ form | crispy }}
                 <br>
                 <input class="btn btn-primary" type="submit" value="Enviar Mensaje" {% if 'ok' in request.GET %}disabled{% endif %}{% if 'error' in request.GET %}disabled{% endif %}>
