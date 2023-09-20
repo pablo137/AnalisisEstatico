@@ -3,7 +3,7 @@
 $(document).ready(function() {
     // Evento de clic en el botón de editar
     $('.btn-editar').on('click', function() {
-      var productoId = $(this).data('producto-id');
+      let productoId = $(this).data('producto-id');
       // Realizar la solicitud Ajax para obtener el formulario de edición
       $.ajax({
         url: "{% url 'editar_producto' %}" + productoId + '/',
