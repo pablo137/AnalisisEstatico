@@ -44,7 +44,7 @@ def contactanos(request):
     if request.method == 'POST':
         form = ContactoMensajeForms(request.POST, request.FILES)
         if form.is_valid():
-            # account_sid = 'AC6b6ffc0469b49c70652ce4bb9014adb3'
+            
             account_sid = 'AC6b6ffc0469b49c70652ce4bb9014adb3'
             # print(settings.ACCOUNT_SID_TWILIO)
             # auth_token = '4fc8e454be511d81e386d4fbe5031757'
