@@ -1,3 +1,4 @@
+from venv import logger
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from store.forms.perfilForms import ContactoForms, ContactoMensajeForms
@@ -31,8 +32,9 @@ def contacto(request):
                 email.send()
                 # Está todo OK
                 return redirect(reverse('contacto')+'?ok')
-            except:
+            except Exception as e:
                 # Ha habido un error y retorno a ERROR
+                logger.error("Error al enviar correo: %s", str(e))
                 return redirect(reverse('contacto')+'?error')
 
     return render(request, 'contacto.html', {'form':contact_form}) 
