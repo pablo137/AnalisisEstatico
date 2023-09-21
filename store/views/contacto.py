@@ -46,8 +46,8 @@ def contactanos(request):
         if form.is_valid():
             
             account_sid = 'AC6b6ffc0469b49c70652ce4bb9014adb3'
-            # print(settings.ACCOUNT_SID_TWILIO)
-            # auth_token = '4fc8e454be511d81e386d4fbe5031757'
+            
+            
             auth_token = 'f33ade014c543cc32b2a5351d07488c3'
             # print(settings.TOKEN_TWILIO)
             client = Client(account_sid, auth_token)
