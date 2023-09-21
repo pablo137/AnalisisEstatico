@@ -73,14 +73,14 @@
                         <hr>
                         <div class="row">
                             {% if profile.user.rol == 'cliente' %}
-                            
+
                             <div></div>
                             {% else %}
                             <div class="d-flex justify-content-left mb-2 ms-2">
                                 <a class="btn btn-primary d-flex justify-content-center mb-2"
                                     href="{% url 'ver_productos' %}">Mis productos</a>
                             </div>
-                            <!-- <p>Eres un emprendedor puedes crear productos</p> -->
+                            
                             {% endif %}
                         </div>
                     </div>
