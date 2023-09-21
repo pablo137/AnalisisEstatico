@@ -51,7 +51,7 @@ def contactanos(request):
             auth_token = 'f33ade014c543cc32b2a5351d07488c3'
             # print(settings.TOKEN_TWILIO)
             client = Client(account_sid, auth_token)
-            message = client.messages.create(
+            client.messages.create(
                 from_='whatsapp:+14155238886',
                 body=form.cleaned_data['mensaje'],
                 to='whatsapp:+59164888167'
