@@ -9,12 +9,12 @@ class Signup(View):
         return render(request, 'signup.html')
 
     def post(self, request):
-        postData = request.POST
-        first_name = postData.get('firstname')
-        last_name = postData.get('lastname')
-        phone = postData.get('phone')
-        email = postData.get('email')
-        password = postData.get('password')
+        post_data = request.POST
+        first_name = post_data.get('firstname')
+        last_name = post_data.get('lastname')
+        phone = post_data.get('phone')
+        email = post_data.get('email')
+        password = post_data.get('password')
         # validation
         value = {
             'first_name': first_name,
