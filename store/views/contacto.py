@@ -57,7 +57,7 @@ def contactanos(request):
                 to='whatsapp:+59164888167'
             )
             messages.success(request,"Ha sido enviado correctamente")
-            # return render(request, 'contactanos.html')
+            
             return redirect('contactanos')
     else:
         form = ContactoMensajeForms()
