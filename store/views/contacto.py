@@ -1,3 +1,4 @@
+import os
 from venv import logger
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -5,6 +6,7 @@ from store.forms.perfilForms import ContactoForms, ContactoMensajeForms
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from twilio.rest import Client
+
 
 def contacto(request):
     # print('Tipo de petición: {}'.format(request.method))
@@ -48,7 +50,7 @@ def contactanos(request):
             account_sid = 'AC6b6ffc0469b49c70652ce4bb9014adb3'
             
             
-            auth_token = 'f33ade014c543cc32b2a5351d07488c3'
+            auth_token = os.environ.get("AUTH_TOKEN", "Valor predeterminado si no se encuentra el secreto")
             # print(settings.TOKEN_TWILIO)
             client = Client(account_sid, auth_token)
             client.messages.create(
