@@ -204,5 +204,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Configuracion de correo electronico
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = '523a1a06ac16bd'
-EMAIL_HOST_PASSWORD = '6b3b31c114347d'
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PSW", "Valor predeterminado si no se encuentra el secreto")
 EMAIL_PORT = '2525'
