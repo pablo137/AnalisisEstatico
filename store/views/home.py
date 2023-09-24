@@ -74,6 +74,6 @@ def condiciones_uso(resquest):
 def privacidad(resquest):
     return render(resquest, 'html_static/privacidad.html')
 
-
+@require_http_methods(["GET"])
 def acerca_de(resquest):
     return render(resquest, 'acerca_de.html')
