@@ -70,6 +70,7 @@ def home(request):
 def condiciones_uso(resquest):
     return render(resquest, 'html_static/condiciones_uso.html')
 
+@require_http_methods(["GET"])
 def privacidad(resquest):
     return render(resquest, 'html_static/privacidad.html')
 
