@@ -5,7 +5,9 @@ from store.forms.perfilForms import ContactoForms, ContactoMensajeForms
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from twilio.rest import Client
+from django.views.decorators.http import require_http_methods
 
+@require_http_methods(["POST"])
 def contacto(request):
     # print('Tipo de petición: {}'.format(request.method))
     contact_form = ContactoForms()
