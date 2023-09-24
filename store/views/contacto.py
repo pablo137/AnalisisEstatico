@@ -41,8 +41,8 @@ def contacto(request):
 
     return render(request, 'contacto.html', {'form':contact_form}) 
 
+@require_http_methods(["POST"])
 def contactanos(request):
-
     if request.method == 'POST':
         form = ContactoMensajeForms(request.POST, request.FILES)
         if form.is_valid():
