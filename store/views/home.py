@@ -60,7 +60,7 @@ def store(request):
     print('you are : ', request.session.get('email'))
     return render(request, 'index.html', data)
 
-
+@require_http_methods(["GET"])
 def home(request):
     categorias = Category.get_all_categories()
     context = {'categorias' : categorias,}
