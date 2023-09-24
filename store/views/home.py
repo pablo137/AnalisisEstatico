@@ -66,7 +66,7 @@ def home(request):
     context = {'categorias' : categorias,}
     return render(request, "home.html", context)
 
-
+@require_http_methods(["GET"])
 def condiciones_uso(resquest):
     return render(resquest, 'html_static/condiciones_uso.html')
 
