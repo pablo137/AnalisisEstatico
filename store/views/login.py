@@ -3,7 +3,7 @@ from django.shortcuts import render , redirect , HttpResponseRedirect
 from django.contrib.auth.hashers import  check_password
 from store.models.customer import Customer
 from django.views import  View
-
+from django.views.decorators.http import require_http_methods
 
 class Login(View):
     return_url = None
@@ -34,6 +34,7 @@ class Login(View):
         print(email, password)
         return render(request, 'login.html', {'error': error_message})
 
+@require_http_methods(["GET"])
 def logout(request):
     request.session.clear()
     return redirect('home')

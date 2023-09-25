@@ -3,6 +3,7 @@ from store.models.product import Product
 from store.models.category import Category
 from store.models.customer import Customer
 from django.views import View
+from django.views.decorators.http import require_http_methods
 
 
 # Create your views here.
@@ -34,11 +35,11 @@ class Index(View):
         return redirect('homepage')
 
 
-
     def get(self , request):
         # print()
         return HttpResponseRedirect(f'/store{request.get_full_path()[1:]}')
 
+@require_http_methods(["GET"])
 def store(request):
 
     cart = request.session.get('cart')
@@ -59,19 +60,20 @@ def store(request):
     print('you are : ', request.session.get('email'))
     return render(request, 'index.html', data)
 
-
+@require_http_methods(["GET"])
 def home(request):
     categorias = Category.get_all_categories()
     context = {'categorias' : categorias,}
     return render(request, "home.html", context)
 
-
+@require_http_methods(["GET"])
 def condiciones_uso(resquest):
     return render(resquest, 'html_static/condiciones_uso.html')
 
+@require_http_methods(["GET"])
 def privacidad(resquest):
     return render(resquest, 'html_static/privacidad.html')
 
-
+@require_http_methods(["GET"])
 def acerca_de(resquest):
     return render(resquest, 'acerca_de.html')
