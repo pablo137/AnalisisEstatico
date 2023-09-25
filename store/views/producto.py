@@ -24,7 +24,7 @@ def ver_productos(request):
             'user':user,
             })
 
-
+@require_http_methods(["POST"])
 def crear_producto(request):
     user_id = request.session.get("customer")
     user = Customer.objects.get(id=user_id)
