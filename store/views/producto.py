@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from store.models.product import Product
 from store.models.customer import Customer
 from store.forms.perfilForms import ProductoForm
+from django.views.decorators.http import require_http_methods
 
-
+@require_http_methods(["GET"])
 def ver_productos(request):
     user_id = request.session.get("customer")
     user = Customer.objects.get(id=user_id)
