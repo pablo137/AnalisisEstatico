@@ -41,7 +41,7 @@ def crear_producto(request):
         form = ProductoForm()
     return render(request,'producto/crear_producto.html', {'form': form,'user':user})
 
-
+@require_http_methods(["POST"])
 def editar_producto(request, producto_id):
     user_id = request.session.get("customer")
     user = Customer.objects.get(id=user_id)
